@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chấm điểm website chuẩn marketing</title>
+  <meta name="description" content="Nhập địa chỉ website để chấm điểm chuẩn marketing /100 theo 60 tiêu chí, kèm bằng chứng cụ thể cho từng hạng mục.">
+  <meta name="theme-color" content="#123c3a">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <a class="skip" href="#noi-dung">Chuyển đến nội dung chính</a>
+  <header class="top">
+    <div class="wrap">
+      <p class="eyebrow">Đề 5 · Module đánh giá &amp; chấm điểm</p>
+      <h1>Kiểm tra nhanh website chuẩn marketing</h1>
+      <p class="lead">Nhập địa chỉ website để nhận điểm /100 theo 60 tiêu chí, kèm bằng chứng trích từ chính mã nguồn của trang.</p>
+      <form id="form" class="search" autocomplete="off">
+        <label class="sr" for="url">Địa chỉ website</label>
+        <input id="url" name="url" type="text" inputmode="url" placeholder="Nhập địa chỉ website, ví dụ: tenmien.vn" required>
+        <button id="submit" type="submit">Kiểm tra</button>
+      </form>
+      <p class="hint">Thiếu https:// cũng không sao, công cụ tự thêm.</p>
+    </div>
+  </header>
+
+  <main id="noi-dung" class="wrap">
+    <div id="error" class="alert" role="alert" hidden></div>
+    <div id="loading" class="loading" hidden>
+      <span class="spinner" aria-hidden="true"></span>
+      <span>Đang kiểm tra… công cụ đang tải trang, robots.txt và sitemap (thường mất 3–15 giây).</span>
+    </div>
+
+    <section id="summary" class="card summary" hidden aria-labelledby="summary-title">
+      <h2 id="summary-title" class="sr">Kết quả tổng quan</h2>
+      <div class="score-block">
+        <div class="ring" id="ring">
+          <svg viewBox="0 0 120 120" aria-hidden="true">
+            <circle class="ring-bg" cx="60" cy="60" r="52"></circle>
+            <circle class="ring-fg" id="ring-fg" cx="60" cy="60" r="52"></circle>
+          </svg>
+          <div class="ring-text"><strong id="score">0</strong><span>/100</span></div>
+        </div>
+        <p class="grade" id="grade"></p>
+      </div>
+      <div class="summary-body">
+        <dl class="meta">
+          <div><dt>Website</dt><dd id="final-url"></dd></div>
+          <div><dt>Thời điểm kiểm tra</dt><dd id="checked-at"></dd></div>
+          <div><dt>Kết quả</dt><dd id="counts"></dd></div>
+        </dl>
+        <ul class="bars" id="bars"></ul>
+      </div>
+    </section>
+
+    <details id="guide" class="card guide" open>
+      <summary><h2>Cách tính điểm</h2><span class="chev" aria-hidden="true"></span></summary>
+      <div id="guide-body" class="guide-body"></div>
+    </details>
+
+    <section id="details" class="card" hidden aria-labelledby="details-title">
+      <div class="details-head">
+        <h2 id="details-title">Chi tiết đánh giá</h2>
+        <div class="filters" id="filters" role="group" aria-label="Lọc theo trạng thái"></div>
+      </div>
+      <div id="checklist"></div>
+    </section>
+  </main>
+
+  <footer class="foot wrap">
+    <p>Công cụ chỉ đọc mã HTML ban đầu của trang. Với website dựng hoàn toàn bằng JavaScript, kết quả có thể thấp hơn thực tế.</p>
+  </footer>
+  <script src="/app.js"></script>
+</body>
+</html>

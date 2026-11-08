@@ -1,0 +1,15 @@
+{
+  "name": "web-audit-score",
+  "version": "1.0.0",
+  "description": "Module đánh giá & chấm điểm website chuẩn marketing theo 60 tiêu chí (Đề 5)",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "start": "node server.mjs",
+    "dev": "node server.mjs",
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
